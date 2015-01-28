@@ -1,0 +1,1 @@
+default["terrepets"]["database"] = "rails"

@@ -1,0 +1,6 @@
+{
+        "mysql": {"server_root_password": "bdbpw?please!", "server_debian_password": "bdbpw?please!", "server_repl_password": "bdbpw?please!"},
+        "mediwiki": {"db_password": "mediawiki", "server_name": "mediawiki.oberlander.local"},
+        "run_list": [ "recipe[apt]", "recipe[mediawiki]" ]
+
+}

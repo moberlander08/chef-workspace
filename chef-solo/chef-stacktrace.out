@@ -1,0 +1,34 @@
+Generated at 2015-01-18 19:26:28 -0500
+SyntaxError: /root/chef-repo/cookbooks/unicorn/recipes/default.rb:71: syntax error, unexpected tSYMBEG, expecting ')'
+	:workingdirectory => node['unicorn']['user']
+	 ^
+/root/chef-repo/cookbooks/unicorn/recipes/default.rb:72: syntax error, unexpected =>, expecting keyword_end
+	:unicorndirectory => node['unicorn']['path']
+	                    ^
+/root/chef-repo/cookbooks/unicorn/recipes/default.rb:73: syntax error, unexpected ')', expecting keyword_end
+/opt/chef/embedded/apps/chef/lib/chef/mixin/from_file.rb:30:in `instance_eval'
+/opt/chef/embedded/apps/chef/lib/chef/mixin/from_file.rb:30:in `from_file'
+/opt/chef/embedded/apps/chef/lib/chef/cookbook_version.rb:245:in `load_recipe'
+/opt/chef/embedded/apps/chef/lib/chef/run_context.rb:169:in `load_recipe'
+/opt/chef/embedded/apps/chef/lib/chef/run_context/cookbook_compiler.rb:140:in `block in compile_recipes'
+/opt/chef/embedded/apps/chef/lib/chef/run_context/cookbook_compiler.rb:138:in `each'
+/opt/chef/embedded/apps/chef/lib/chef/run_context/cookbook_compiler.rb:138:in `compile_recipes'
+/opt/chef/embedded/apps/chef/lib/chef/run_context/cookbook_compiler.rb:75:in `compile'
+/opt/chef/embedded/apps/chef/lib/chef/run_context.rb:92:in `load'
+/opt/chef/embedded/apps/chef/lib/chef/policy_builder/expand_node_object.rb:73:in `setup_run_context'
+/opt/chef/embedded/apps/chef/lib/chef/client.rb:235:in `setup_run_context'
+/opt/chef/embedded/apps/chef/lib/chef/client.rb:397:in `run'
+/opt/chef/embedded/apps/chef/lib/chef/application.rb:261:in `block in fork_chef_client'
+/opt/chef/embedded/apps/chef/lib/chef/application.rb:249:in `fork'
+/opt/chef/embedded/apps/chef/lib/chef/application.rb:249:in `fork_chef_client'
+/opt/chef/embedded/apps/chef/lib/chef/application.rb:215:in `block in run_chef_client'
+/opt/chef/embedded/apps/chef/lib/chef/local_mode.rb:38:in `with_server_connectivity'
+/opt/chef/embedded/apps/chef/lib/chef/application.rb:201:in `run_chef_client'
+/opt/chef/embedded/apps/chef/lib/chef/application/solo.rb:245:in `block in interval_run_chef_client'
+/opt/chef/embedded/apps/chef/lib/chef/application/solo.rb:234:in `loop'
+/opt/chef/embedded/apps/chef/lib/chef/application/solo.rb:234:in `interval_run_chef_client'
+/opt/chef/embedded/apps/chef/lib/chef/application/solo.rb:224:in `run_application'
+/opt/chef/embedded/apps/chef/lib/chef/application.rb:58:in `run'
+/opt/chef/embedded/apps/chef/bin/chef-solo:25:in `<top (required)>'
+/usr/bin/chef-solo:40:in `load'
+/usr/bin/chef-solo:40:in `<main>'

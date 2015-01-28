@@ -1,0 +1,7 @@
+{
+        "mysql": {"server_root_password": "bdbpw?please!", "server_debian_password": "bdbpw?please!", "server_repl_password": "bdbpw?please!"},
+        "phpapp": {"db_password": "phppasswd", "server_name": "chefserve.oberlander.local"},
+        "run_list": [ "recipe[apt]", "recipe[terrepets]" ]
+
+}
+

@@ -1,0 +1,11 @@
+CONFIGURED=yes
+
+TIMEOUT=60
+
+APP_ROOT= <%= @app_root %>
+
+CONFIG_RB= <%= @config_home + "/unicorn.conf" %>
+
+PID= <%= @config_home %>
+UNICORN_OPTS="-D -c $CONFIG_RB -E production"
+

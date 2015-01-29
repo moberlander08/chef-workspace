@@ -20,6 +20,10 @@ if node[:platform_family].include?("debian")
 		command "gem install rails --no-ri --no-rdoc"
 	end
 
+	execute "install unicorn" do
+                user 'root'
+                command "gem install unicorn --no-ri --no-rdoc"
+        end
 end
 
 #create user account
@@ -63,12 +67,29 @@ end
 
 template node["unicorn"]["path"] + '/unicorn.conf' do
 	source 'unicorn.conf.erb'
-	mode 755
+	mode 640
 	owner node['unicorn']['user']
 	group node['unicorn']['user']
 	variables(
 	:user => node['unicorn']['user'],
 	:workingdirectory => node['unicorn']['user'],
 	:unicorndirectory => node['unicorn']['path'])
+end
+
+template '/etc/default/unicorn.conf' do
+        source 'unicorn.erb'
+        mode 640
+        owner 'root'
+        group 'root'
+        variables(
+        :app_root => node['unicorn']['home'],
+        :config_home => node['unicorn']['path'])
+end
+
+template '/etc/init.d/unicorn' do
+        source 'unicorn-init'
+        mode 751
+        owner 'root'
+        group 'root'
 end
 

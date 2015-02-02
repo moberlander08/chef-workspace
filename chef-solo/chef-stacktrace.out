@@ -1,72 +1,18 @@
-Generated at 2015-01-28 21:41:46 -0500
-Chef::Mixin::Template::TemplateError: 
-
-Chef::Mixin::Template::TemplateError ((erubis):7: unterminated regexp meets end of file
-(erubis):7: syntax error, unexpected end-of-input, expecting ')') on line #:
-
-  1: CONFIGURED=yes
-  2: 
-  3: TIMEOUT=60
-  4: 
-  5: APP_ROOT= <%= @app_root %>
-  6: 
-  7: CONFIG_RB= <%= @config_home + /unicorn.conf %>
-  8: 
-  9: PID= <%= @config_home %>
- 10: UNICORN_OPTS="-D -c $CONFIG_RB -E production"
-
-  /opt/chef/embedded/lib/ruby/gems/2.1.0/gems/erubis-2.7.0/lib/erubis/evaluator.rb:73:in `eval'
-  /opt/chef/embedded/lib/ruby/gems/2.1.0/gems/erubis-2.7.0/lib/erubis/evaluator.rb:73:in `evaluate'
-  /opt/chef/embedded/apps/chef/lib/chef/mixin/template.rb:126:in `_render_template'
-  /opt/chef/embedded/apps/chef/lib/chef/mixin/template.rb:112:in `render_template'
-  /opt/chef/embedded/apps/chef/lib/chef/provider/template/content.rb:43:in `file_for_provider'
-  /opt/chef/embedded/apps/chef/lib/chef/file_content_management/content_base.rb:40:in `tempfile'
-  /opt/chef/embedded/apps/chef/lib/chef/provider/file.rb:451:in `tempfile'
-  /opt/chef/embedded/apps/chef/lib/chef/provider/file.rb:337:in `do_generate_content'
-  /opt/chef/embedded/apps/chef/lib/chef/provider/file.rb:148:in `action_create'
-  /opt/chef/embedded/apps/chef/lib/chef/provider.rb:145:in `run_action'
-  /opt/chef/embedded/apps/chef/lib/chef/resource.rb:582:in `run_action'
-  /opt/chef/embedded/apps/chef/lib/chef/runner.rb:49:in `run_action'
-  /opt/chef/embedded/apps/chef/lib/chef/runner.rb:81:in `block (2 levels) in converge'
-  /opt/chef/embedded/apps/chef/lib/chef/runner.rb:81:in `each'
-  /opt/chef/embedded/apps/chef/lib/chef/runner.rb:81:in `block in converge'
-  /opt/chef/embedded/apps/chef/lib/chef/resource_collection/resource_list.rb:83:in `block in execute_each_resource'
-  /opt/chef/embedded/apps/chef/lib/chef/resource_collection/stepable_iterator.rb:116:in `call'
-  /opt/chef/embedded/apps/chef/lib/chef/resource_collection/stepable_iterator.rb:116:in `call_iterator_block'
-  /opt/chef/embedded/apps/chef/lib/chef/resource_collection/stepable_iterator.rb:85:in `step'
-  /opt/chef/embedded/apps/chef/lib/chef/resource_collection/stepable_iterator.rb:104:in `iterate'
-  /opt/chef/embedded/apps/chef/lib/chef/resource_collection/stepable_iterator.rb:55:in `each_with_index'
-  /opt/chef/embedded/apps/chef/lib/chef/resource_collection/resource_list.rb:81:in `execute_each_resource'
-  /opt/chef/embedded/lib/ruby/2.1.0/forwardable.rb:183:in `execute_each_resource'
-  /opt/chef/embedded/apps/chef/lib/chef/runner.rb:80:in `converge'
-  /opt/chef/embedded/apps/chef/lib/chef/client.rb:315:in `converge'
-  /opt/chef/embedded/apps/chef/lib/chef/client.rb:400:in `block in run'
-  /opt/chef/embedded/apps/chef/lib/chef/client.rb:399:in `catch'
-  /opt/chef/embedded/apps/chef/lib/chef/client.rb:399:in `run'
-  /opt/chef/embedded/apps/chef/lib/chef/application.rb:261:in `block in fork_chef_client'
-  /opt/chef/embedded/apps/chef/lib/chef/application.rb:249:in `fork'
-  /opt/chef/embedded/apps/chef/lib/chef/application.rb:249:in `fork_chef_client'
-  /opt/chef/embedded/apps/chef/lib/chef/application.rb:215:in `block in run_chef_client'
-  /opt/chef/embedded/apps/chef/lib/chef/local_mode.rb:38:in `with_server_connectivity'
-  /opt/chef/embedded/apps/chef/lib/chef/application.rb:201:in `run_chef_client'
-  /opt/chef/embedded/apps/chef/lib/chef/application/solo.rb:245:in `block in interval_run_chef_client'
-  /opt/chef/embedded/apps/chef/lib/chef/application/solo.rb:234:in `loop'
-  /opt/chef/embedded/apps/chef/lib/chef/application/solo.rb:234:in `interval_run_chef_client'
-  /opt/chef/embedded/apps/chef/lib/chef/application/solo.rb:224:in `run_application'
-  /opt/chef/embedded/apps/chef/lib/chef/application.rb:58:in `run'
-  /opt/chef/embedded/apps/chef/bin/chef-solo:25:in `<top (required)>'
-  /usr/bin/chef-solo:40:in `load'
-  /usr/bin/chef-solo:40:in `<main>'
-
-
-/opt/chef/embedded/apps/chef/lib/chef/mixin/template.rb:128:in `rescue in _render_template'
-/opt/chef/embedded/apps/chef/lib/chef/mixin/template.rb:124:in `_render_template'
-/opt/chef/embedded/apps/chef/lib/chef/mixin/template.rb:112:in `render_template'
-/opt/chef/embedded/apps/chef/lib/chef/provider/template/content.rb:43:in `file_for_provider'
-/opt/chef/embedded/apps/chef/lib/chef/file_content_management/content_base.rb:40:in `tempfile'
-/opt/chef/embedded/apps/chef/lib/chef/provider/file.rb:451:in `tempfile'
-/opt/chef/embedded/apps/chef/lib/chef/provider/file.rb:337:in `do_generate_content'
-/opt/chef/embedded/apps/chef/lib/chef/provider/file.rb:148:in `action_create'
+Generated at 2015-02-01 21:18:08 -0500
+Mixlib::ShellOut::ShellCommandFailed: execute[git clone] (bitbucket::default line 61) had an error: Mixlib::ShellOut::ShellCommandFailed: Expected process to exit with [0], but received '128'
+---- Begin output of git clone git@bitbucket.org:terrepets/terrepets.git ----
+STDOUT: 
+STDERR: fatal: destination path 'terrepets' already exists and is not an empty directory.
+---- End output of git clone git@bitbucket.org:terrepets/terrepets.git ----
+Ran git clone git@bitbucket.org:terrepets/terrepets.git returned 128
+/opt/chef/embedded/lib/ruby/gems/2.1.0/gems/mixlib-shellout-2.0.0/lib/mixlib/shellout.rb:267:in `invalid!'
+/opt/chef/embedded/lib/ruby/gems/2.1.0/gems/mixlib-shellout-2.0.0/lib/mixlib/shellout.rb:254:in `error!'
+/opt/chef/embedded/apps/chef/lib/chef/mixin/shell_out.rb:50:in `shell_out!'
+/opt/chef/embedded/apps/chef/lib/chef/provider/execute.rb:60:in `block in action_run'
+/opt/chef/embedded/apps/chef/lib/chef/mixin/why_run.rb:52:in `call'
+/opt/chef/embedded/apps/chef/lib/chef/mixin/why_run.rb:52:in `add_action'
+/opt/chef/embedded/apps/chef/lib/chef/provider.rb:180:in `converge_by'
+/opt/chef/embedded/apps/chef/lib/chef/provider/execute.rb:59:in `action_run'
 /opt/chef/embedded/apps/chef/lib/chef/provider.rb:145:in `run_action'
 /opt/chef/embedded/apps/chef/lib/chef/resource.rb:582:in `run_action'
 /opt/chef/embedded/apps/chef/lib/chef/runner.rb:49:in `run_action'

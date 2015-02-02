@@ -7,8 +7,10 @@
 # All rights reserved - Do Not Redistribute
 #a
 
-include_recipe "ruby"
-include_recipe "nginx"
+#include_recipe "ruby"
+#include_recipe "bitbucket"
+#include_recipe "unicorn"
+#include_recipe "nginx"
 include_recipe "mysql::client"
 include_recipe "mysql::server"
 include_recipe "mysql::ruby"

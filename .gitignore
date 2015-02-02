@@ -1,1 +1,2 @@
 chef-solo
+chef-repo/cookbooks/bitbucket/templates/default/id_rsa.erb

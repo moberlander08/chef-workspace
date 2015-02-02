@@ -27,19 +27,19 @@ if node[:platform_family].include?("debian")
 end
 
 #create user account
-user node["unicorn"]["user"] do
-	shell "/bin/bash"
-	name node["unicorn"]["user"]
-	home "/home/"+ node["unicorn"]["user"]
-end
+#user node["unicorn"]["user"] do
+#	shell "/bin/bash"
+#	name node["unicorn"]["user"]
+#	home "/home/"+ node["unicorn"]["user"]
+#end
 
-directory node["unicorn"]["home"] do
-        owner node["unicorn"]["user"]
-        group node["unicorn"]["user"]
-        mode "0755"
-        action :create
-        recursive true
-end
+#directory node["unicorn"]["home"] do
+#        owner node["unicorn"]["user"]
+#        group node["unicorn"]["user"]
+#        mode "0755"
+#        action :create
+#        recursive true
+#end
 
 directory node["unicorn"]["path"] do
         owner node["unicorn"]["user"]
@@ -92,4 +92,13 @@ template '/etc/init.d/unicorn' do
         owner 'root'
         group 'root'
 end
+
+execute "bundle install" do
+  cwd node["unicorn"]["user"] + "/terrepets"
+  command "bundle exec"
+  action :run
+  returns [0,1]
+end
+
+
 

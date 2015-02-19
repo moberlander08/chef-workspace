@@ -15,6 +15,10 @@ if node[:platform_family].include?("debian")
 		action :install
 	end
 
+	apt_package "nodejs" do
+		action :install
+	end
+
 	execute "install rails" do
 		user 'root'
 		command "gem install rails --no-ri --no-rdoc"

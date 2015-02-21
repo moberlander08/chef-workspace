@@ -1,24 +1,19 @@
-Generated at 2015-02-18 22:40:41 -0500
-Mixlib::ShellOut::ShellCommandFailed: execute[rake db:migrate] (terrepets::default line 49) had an error: Mixlib::ShellOut::ShellCommandFailed: Expected process to exit with [0], but received '1'
----- Begin output of rake db:migrate ----
+Generated at 2015-02-21 16:44:36 -0500
+Mixlib::ShellOut::ShellCommandFailed: service[mysql] (mysql::_server_debian line 129) had an error: Mixlib::ShellOut::ShellCommandFailed: Expected process to exit with [0], but received '1'
+---- Begin output of /sbin/start mysql ----
 STDOUT: 
-STDERR: rake aborted!
-ActiveRecord::StatementInvalid: Mysql2::Error: Table 'schema_migrations' already exists: CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
-
-Mysql2::Error: Table 'schema_migrations' already exists
-
-Tasks: TOP => db:migrate
-(See full trace by running task with --trace)
----- End output of rake db:migrate ----
-Ran rake db:migrate returned 1
+STDERR: start: Job failed to start
+---- End output of /sbin/start mysql ----
+Ran /sbin/start mysql returned 1
 /opt/chef/embedded/lib/ruby/gems/2.1.0/gems/mixlib-shellout-2.0.0/lib/mixlib/shellout.rb:267:in `invalid!'
 /opt/chef/embedded/lib/ruby/gems/2.1.0/gems/mixlib-shellout-2.0.0/lib/mixlib/shellout.rb:254:in `error!'
-/opt/chef/embedded/apps/chef/lib/chef/mixin/shell_out.rb:50:in `shell_out!'
-/opt/chef/embedded/apps/chef/lib/chef/provider/execute.rb:60:in `block in action_run'
+/opt/chef/embedded/apps/chef/lib/chef/mixin/shell_out.rb:60:in `shell_out_with_systems_locale!'
+/opt/chef/embedded/apps/chef/lib/chef/provider/service/upstart.rb:166:in `start_service'
+/opt/chef/embedded/apps/chef/lib/chef/provider/service.rb:90:in `block in action_start'
 /opt/chef/embedded/apps/chef/lib/chef/mixin/why_run.rb:52:in `call'
 /opt/chef/embedded/apps/chef/lib/chef/mixin/why_run.rb:52:in `add_action'
 /opt/chef/embedded/apps/chef/lib/chef/provider.rb:180:in `converge_by'
-/opt/chef/embedded/apps/chef/lib/chef/provider/execute.rb:59:in `action_run'
+/opt/chef/embedded/apps/chef/lib/chef/provider/service.rb:89:in `action_start'
 /opt/chef/embedded/apps/chef/lib/chef/provider.rb:145:in `run_action'
 /opt/chef/embedded/apps/chef/lib/chef/resource.rb:582:in `run_action'
 /opt/chef/embedded/apps/chef/lib/chef/runner.rb:49:in `run_action'

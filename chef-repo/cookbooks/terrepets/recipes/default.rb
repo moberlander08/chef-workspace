@@ -7,13 +7,44 @@
 # All rights reserved - Do Not Redistribute
 #a
 
-#include_recipe "ruby"
+include_recipe "ruby"
 include_recipe "bitbucket"
 include_recipe "unicorn"
 include_recipe "nginx"
 include_recipe "mysql::client"
 include_recipe "mysql::server"
 include_recipe "mysql::ruby"
+include_recipe "percona"
+
+directory "/etc/nginx/ssl" do
+        owner "root"
+        group "root"
+        mode "0755"
+        action :create
+        recursive true
+end
+
+directory "/etc/nginx/ssl/2015" do
+        owner "root"
+        group "root"
+        mode "0755"
+        action :create
+        recursive true
+end
+
+template '/etc/nginx/sssl/2015/terrepets-15.crt' do
+        source 'terrepets-15.crt'
+        mode 0755
+        owner 'root'
+        group 'root'
+end
+
+template '/etc/nginx/sites-available/terrepets-15.key' do
+        source 'terrepets-15.key'
+        mode 0755
+        owner 'root'
+        group 'root'
+end
 
 template '/etc/nginx/sites-available/terrepets.conf' do
 	source 'app.erb'

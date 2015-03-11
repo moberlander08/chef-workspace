@@ -17,7 +17,7 @@ when "debian"
 	end
 
 	execute "add percona mirror" do	
-	  command "echo deb http://repo.percona.com/apt VERSION main >> /etc/apt/sources.list \n echo deb-src http://repo.percona.com/apt VERSION main >> /etc/apt/sources.list"
+	  command "echo deb http://repo.percona.com/apt trusty main >> /etc/apt/sources.list \n echo deb-src http://repo.percona.com/apt trusty main >> /etc/apt/sources.list"
 	  action :run
 	  returns [0,1]
 	end
@@ -28,7 +28,7 @@ when "debian"
           returns [0,1]
         end
 
-	apt_package "percona-xtrabackup" do
+	apt_package "percona-xtrabackup-21" do
 	  action :install
 	end
 
